@@ -1,0 +1,581 @@
+
+*{
+
+	margin:0px;
+	padding: 0px;
+	list-style:none;
+	text-decoration:none;
+	font-size:16px;
+	color:black;
+	z-index:0;
+}
+
+	body{
+		background:#231c18;
+	}
+
+	header{
+		background:#002255;
+		color:white;
+		padding:9px 0px 9px 0px;
+	}
+
+	header img{
+		width:50px;
+		height:50px;
+		margin:15px 0px 0px 15px;
+	}
+
+	header h2{
+		display:inline;
+		position:absolute;
+		margin:18px 20px 10px 20px;
+		font-size:2em;
+		color:white;
+	}
+
+
+	header #nav-ejercicios{
+		margin: 20px 0px 0px 0px;
+	}
+
+	header #nav-ejercicios ul{
+		background:#2f8391;
+		padding:15px 2% 15px 2%;
+	}
+
+	header #nav-ejercicios ul li{
+		padding:15px 2% 15px 2%;
+		text-align:center;
+		display:inline;
+		font-size:26px;/*?em*/
+	}
+
+	header #nav-ejercicios ul li:hover{
+		background:#002255;
+		color:#2f8391;
+	}
+
+/*******************************************/
+
+	main{
+		margin-bottom:60px;
+	}
+
+	main section h2{
+		text-align:center;
+		margin-bottom:20px;
+		font-size:1.5em;
+		color:#bbe2e9;
+	}
+
+	/*REPASAR*/
+	main #nav-operaciones{
+		margin: -5px 0px 20px 0px;
+	}
+
+	/*REPASAR*/
+	main #nav-operaciones #opciones{
+		
+		background:#2f8391;
+		padding:15px 2% 15px 2%;
+	}
+
+	/*REPASAR*/
+	main #opciones li{
+		text-align:right;
+		margin-bottom:1px;
+		display:inline;
+	}
+
+	main #nav-operaciones #opciones li img{
+		width:30px;
+		height:30px;
+		border:2px solid #2f8391;
+		border-radius:10px;
+		display:none;
+	}
+
+	main #nav-operaciones #opciones li a{
+		padding:15px 2% 15px 2%;
+		font-size:20px;/*?em*/
+
+	}
+
+	main #nav-operaciones #opciones li a:hover{
+		background:#002255;
+		color:#2f8391;
+	}
+
+	#principal{
+		margin-bottom:215px;
+	}
+
+	section h2{
+		display:none;
+	}
+
+	section aside{
+		width:17%;
+		position:absolute;
+	}
+
+	section aside bp-nav-meses nav{
+		width:100%;
+	}
+
+	section aside bp-nav-meses nav ul{
+		background:#2f8391;
+	}
+
+	section aside bp-nav-meses nav ul li{
+	}
+
+	section aside bp-nav-meses nav ul li a{
+		padding: 10px 3%;
+		display:block;
+	}
+
+	section aside bp-nav-meses nav ul li a:hover{
+		background:#002255;
+		color:#2f8391;
+	}
+
+	section article{
+		width:80%;
+		min-width:200px;
+	}
+
+	section .meses{
+		margin-top:30px;
+	}
+
+	section article header{
+		background:#2f8391;
+		padding-left:2%;
+		width:20%;
+		display:none;
+	}
+
+	section article #dias_del_mes_movil, section article .pie_mes{
+		margin-left:30%;
+		margin-right:-17%;
+	}
+
+	section article .pie_mes{
+		background:#2f8391;
+		padding:10px 0px 10px 5px;
+	}
+
+	section article .pie_mes menu{
+	}
+
+	section article #dias_del_mes_movil li{
+		padding:5px 5px;
+		background:#231c18;
+		margin-bottom: 2px;
+		/*display:flex;
+		justify-content:space-between;*/
+	}
+
+	section article #dias_del_mes_movil .resaltado{
+			font-weight:bold;
+	}
+
+	section article #dias_del_mes_movil li .dia_mes{
+		background:#2f8391;
+		position:absolute;
+		padding:4.5px 10px;
+	}
+
+	section article #dias_del_mes_movil li ul{
+		width:100%;
+	}
+
+	section article #dias_del_mes_movil li #dias_de_un_mes{
+		margin-top:-9px;
+		margin-bottom:20px;
+		display:flex;
+	}
+
+	section article #dias_del_mes_movil li #dias_de_un_mes li{
+		background:#2f8391;
+		text-align:center;
+		padding:10px 0px;
+		width:5%;
+		border:4px solid #231c18;
+	}
+
+	section article #dias_del_mes_movil li #dias_de_un_mes #ant_ejercicio,
+	section article #dias_del_mes_movil li #dias_de_un_mes #sig_ejercicio{
+		width:12%;
+	}
+
+	section article #dias_del_mes_movil li #dias_de_un_mes li:hover{
+		background:#002255;
+		color:#2f8391;
+		border:4px solid #2f8391;
+	}
+
+	section article #dias_del_mes_movil li ul li{
+		background:#231c18;
+
+	}
+
+	section article #dias_del_mes_movil li ul li div{
+		color:white;
+		display:inline-block;
+		width:24%;
+	}
+
+	section article #dias_del_mes_movil li ul li .alinear_centro{
+		text-align:center;
+	}
+
+	section article #dias_del_mes_movil li ul li .alinear_derecha{
+		text-align:right;
+	}
+
+	section article #dias_del_mes_movil li ul .total_dia div{
+		width:48.6%;
+		font-size:weight;
+	}
+
+	section article #dias_del_mes_movil li ul li form{
+		padding:20px 0px;
+		border-top:3px solid #002255;
+		border-bottom:3px solid #002255;
+		margin-left:-0.7%;
+		margin-right:-0.7%;
+	}
+
+	section article #dias_del_mes_movil li ul li form input{
+		width:23.6%;
+		margin-left:0.5%;
+		margin-right:-0.5%;
+	}
+
+	section article #dias_del_mes_movil li ul li form input#enviar{
+		width:10.5%;
+		margin-right:5%;
+		display:none;
+	}
+
+	section article #dias_del_mes_movil li ul .total_dia{
+		border-top:3px solid #002255;
+	}
+
+	section article footer{
+		background:#88ced9;
+		padding-bottom:0px;
+	}
+
+	section article footer menu ul li{
+		background:#bbe2e9;
+	}
+
+	footer{
+			background:#002255;
+			color:white;
+			padding:10px;
+
+		}
+
+	footer ul{
+		list-style:none;
+	}
+
+	footer ul li{
+		display:inline;
+		padding:5px;
+		background:#2f8391;
+	}
+
+	.bottom { 
+		position: fixed; 
+		text-align: center; 
+		width: 100%; 
+		bottom: 0px;
+	}
+
+
+/**********************************************
+
+DISPOSITIVOS MOVILES
+
+**********************************************/
+
+@media only screen and (max-width : 720px) {
+
+	header{
+		padding: 0px;
+	}
+
+	header img{
+		width:40px;
+		height:40px;
+		margin-left:2%;
+		margin-bottom:-8px;
+	}
+
+	header h2{
+		font-size:1em;
+		display:inline;
+		margin-left:5%;
+		margin-top:25px;
+	}
+
+	header nav{
+	}
+
+	header #nav-ejercicios ul{
+		padding:0;
+		display:flex;
+	}
+
+	header #nav-ejercicios ul li{
+		height:25px;
+		width:25%;
+		margin-left:2px;
+		font-size:1.3em;
+	}
+
+	header nav ul #ant_ejercicio{
+		margin-left:0px;
+	}
+
+	header nav ul #ant_ejercicio, header nav ul #sig_ejercicio, header nav ul #ejercicio_mas{
+		width:10%;
+	}
+
+	header nav ul #ejercicio_nuevo{
+		display:none;
+	}
+
+	header nav ul #ejercicio_mas{
+		display:inline;
+	}
+
+	main bp-nav-operaciones{
+		position:relative;
+		z-index:1;
+	}
+
+	main #nav-operaciones{
+		margin:85px 0px 20px -15%;
+		width:28%;
+		padding:0px;
+		margin-left:-18%;
+		-webkit-transition: 1s;
+		transition: 1s;
+	}
+
+	main #nav-operaciones:hover{
+		margin-left:0%;
+	}
+
+	main #nav-operaciones #opciones{
+		padding:0px;
+	}
+
+	main #nav-operaciones #opciones li{
+		padding:0px;
+		display:list-item;
+		width:100%;
+		margin-bottom:0px;
+		background:transparent;
+		-webkit-transition: 1s;
+		transition: 1s;
+		
+	}
+
+	main #nav-operaciones #opciones li img{
+		border:0px;
+		padding:5px 2% 0px 0px;
+		display:inline;
+	}
+
+	main #nav-operaciones #opciones li a{
+		padding:0px;
+		width:100%;
+		display:block;
+		background:#2f8391;
+		font-size:1.2em;
+	}
+
+	/**************************************/
+
+	main .pares #opciones{
+		margin-left:8%;
+	}
+
+	main .pares #opciones li{
+		height:40px;
+		width:37%;
+		display:inline-block;
+		margin-bottom:10px;
+		
+	}
+
+	main .pares #opciones li:nth-child(odd){
+		margin-right:8%;
+	}
+
+	main .pares #opciones li img{
+		width:30px;
+		height:30px;
+	}
+
+	/**************************************/
+
+	#principal{
+		margin-top:-283px;
+	}
+
+	#principal .ocultar{
+		display:none;
+	}
+
+	section h2{
+		display:block;
+		width:66%;
+		margin-left:17%;
+		font-size:9pt;
+	}
+
+	section article{
+		width:66%;
+		margin-bottom:1px;
+		margin-left:17%;
+	}
+
+	section article header{
+		width:96%;
+		padding:10px 2%;
+		display:block;
+	}
+
+	section article #dias_del_mes_movil{
+		width:100%;
+		margin-left:0px;
+		margin-right:0px;
+		margin-top:2px;
+		display:block;
+	}
+
+	section article #dias_del_mes_movil li{
+		margin-top:-4px;
+		margin-bottom:-10px;
+		margin-left:0%;
+		width:100%;
+		padding:0px;
+	}
+
+	section article #dias_del_mes_movil li .dia_mes{
+		width:6.333333%;
+		padding:5px 0%;
+		margin-left:0%;
+		text-align:center;
+	}
+	
+	section article #dias_del_mes_movil li ul{
+		margin-left:10%;
+		width:90%;
+		margin-top:5px;
+		margin-bottom:13px;
+	}
+
+	section article #dias_del_mes_movil li ul li{
+		background:#bbe2e9;
+		width:100%;
+		margin-bottom:6px;
+		padding:5px 0px;
+	}
+
+	section article #dias_del_mes_movil li ul .resaltado{
+		height:30px;
+		padding:0px;
+	}
+
+	section article #dias_del_mes_movil li ul .total_dia{
+		margin-bottom:5px;
+	}
+
+	section .meses{
+		margin-top:30px;
+	}
+
+	section article #dias_del_mes_movil li ul li div{
+		color:black;
+		display:inline-block;
+		width:48%;
+		padding:0 0 0 1%;
+
+	}
+
+	section article #dias_del_mes_movil li ul .total_dia div{
+		width:48%;
+		font-size:weight;
+	}
+
+	section article #dias_del_mes_movil li ul li div .alinear_derecha{
+		text-align:right;
+	}
+
+	section article .pie_mes{
+		margin-left:0px;
+		margin-right:0px;
+		margin-top:2px;
+		display:block;
+		height:15px;
+		margin-bottom:-27px;
+	}
+
+	section article .pie_mes menu ul{
+		margin-top:-2px;
+	}
+
+	section article .pie_mes menu ul li{
+		padding:0px;
+		height:10px;
+	}
+
+	section article .pie_mes menu ul li a{
+		padding:5px 2%;
+		font-size:1em;
+		height:10px;
+	}
+
+	section article footer, .bottom{
+		z-index:2;
+	}
+
+}
+
+@media only screen and (max-width : 595px) {
+
+	main #nav-operaciones #opciones li{
+		font-size: 8pt;
+	}
+
+	#principal{
+		margin-top:-272px;
+	}
+
+}
+
+@media only screen and (max-width : 455px) {
+
+	main #nav-operaciones #opciones li{
+		font-size: 4.5pt;
+	}
+
+	#principal{
+		margin-top:-261px;
+	}
+
+	section div h2{
+		font-size:1.2em;
+	}
+
+}
