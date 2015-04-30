@@ -24,7 +24,7 @@ class BusinessplanServiceProvider extends ServiceProvider{
 	 */
 	public function boot()
 	{
-		return View::make('package::view.name');
+		echo "Mensaje de prueba";
 	}
 
 }
