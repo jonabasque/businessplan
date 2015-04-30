@@ -1,5 +1,7 @@
 <?php
 
+namespace Jonabasque\Businessplan;
+
 //Index
 echo "Planes de negocio<br \>";
 
@@ -10,7 +12,6 @@ require_once("libs/business_plan/recurso_humano.php");
 require_once("libs/business_plan/resultados.php");
 require_once("libs/business_plan/business_plan.php");
 require_once("libs/business_plan/ejercicios_fiscales.php");
-require_once("libs/dojo-calculadora/class/calculadora.php");
 
 //Utilizamos alias para cada clase
 use asketic\business_plan\User as User;
