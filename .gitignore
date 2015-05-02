@@ -1,5 +1,4 @@
-/vendor/*
-!/vendor/jonabasqueRepo
+/vendor
 composer.phar
 composer.lock
 .DS_Store
