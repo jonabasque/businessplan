@@ -4,7 +4,7 @@ namespace asketic\business_plan;
 
 //require("registro.php");
 
-class Inversion extends Movimiento{
+class Inversion extends Movement{
 
   public function __construct($code, $concept, $imp, $units ){
 

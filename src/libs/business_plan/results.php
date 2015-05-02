@@ -2,7 +2,7 @@
 
 namespace asketic\business_plan;
 
-class Resultados {
+class Results {
 
   public function __construct(){
 
@@ -14,14 +14,14 @@ class Resultados {
       //sacamos del array los indices $day, $month y $exercise
       extract($date);
 
-      //convierto el indice del ejercicio fiscal de cadena a entero
+      //convierto el indice del exercise fiscal de cadena a entero
       $exercise=(int)$exercise;
 
-      //recogemos el objeto del ejercicio pedido
-      $ejercicio = $businessPlan->getEjercicio($exercise);
+      //recogemos el objeto del exercise pedido
+      $exercise = $businessPlan->getexercise($exercise);
 
       //recogemos el mes pedido (todo el contenido)
-      $mes = $ejercicio->movimientos[$month];
+      $mes = $exercise->Movements[$month];
 
       //recogemos el dia pedido (todo el contenido)
       $dia = $mes[$day];
@@ -30,22 +30,22 @@ class Resultados {
       $total=0;
 
       //recorremos el array del día y vamos adquiriendo el importe total
-      foreach($dia as $movimiento){
+      foreach($dia as $Movement){
 
-        //Si el tipo es nulo, se hace la suma de todos los movimientos de ese día
+        //Si el tipo es nulo, se hace la suma de todos los Movements de ese día
         if($type==NULL){
 
-          $total = $total + $movimiento->imp;
+          $total = $total + $Movement->imp;
 
         }else{//Si se ha establecido un tipo, sumar sólo los de ese tipo
 
           //Recogemos del código y el tipo sólo la primera letra, y la pasamos a mayúscula
-          $code = strtoupper(substr($movimiento->code,0,1));
+          $code = strtoupper(substr($Movement->code,0,1));
           $type = strtoupper(substr($type,0,1));
 
-          //Si la letra extraida coincide con el tipo de movimiento
+          //Si la letra extraida coincide con el tipo de Movement
           if($code==$type){
-            $total = $total + $movimiento->imp;
+            $total = $total + $Movement->imp;
           }
  
         }
@@ -61,14 +61,14 @@ class Resultados {
       //sacamos del array los indices $day, $month y $exercise
       extract($date);
 
-      //convierto el indice del ejercicio fiscal de cadena a entero
+      //convierto el indice del exercise fiscal de cadena a entero
       $exercise=(int)$exercise;
 
-      //recogemos el objeto del ejercicio pedido
-      $ejercicio = $businessPlan->getEjercicio($exercise);
+      //recogemos el objeto del exercise pedido
+      $exercise = $businessPlan->getexercise($exercise);
 
       //recogemos el mes pedido (todo el contenido)
-      $mes = $ejercicio->movimientos[$month];
+      $mes = $exercise->Movements[$month];
 
       //recogemos el dia pedido (todo el contenido)
       $dia = $mes[$day];
@@ -80,21 +80,21 @@ class Resultados {
       foreach($mes as $day){
 
         //recorremos el array del día y vamos adquiriendo el importe total
-        foreach($day as $movimiento){
+        foreach($day as $Movement){
 
           if($type==NULL){
 
-            $total = $total + $movimiento->imp;
+            $total = $total + $Movement->imp;
 
           }else{
 
             //Recogemos del código y el tipo sólo la primera letra, y la pasamos a mayúscula
-            $code = strtoupper(substr($movimiento->code,0,1));
+            $code = strtoupper(substr($Movement->code,0,1));
             $type = strtoupper(substr($type,0,1));
 
-            //Si la letra extraida coincide con el tipo de movimiento
+            //Si la letra extraida coincide con el tipo de Movement
             if($code==$type){
-              $total = $total + $movimiento->imp;
+              $total = $total + $Movement->imp;
             }
    
           }
@@ -112,14 +112,14 @@ class Resultados {
       //sacamos del array los indices $day, $month y $exercise
       extract($date);
 
-      //convierto el indice del ejercicio fiscal de cadena a entero
+      //convierto el indice del exercise fiscal de cadena a entero
       $exercise=(int)$exercise;
 
-      //recogemos el objeto del ejercicio pedido
-      $ejercicio = $businessPlan->getEjercicio($exercise);
+      //recogemos el objeto del exercise pedido
+      $exercise = $businessPlan->getexercise($exercise);
 
       //recogemos el mes pedido (todo el contenido)
-      $mes = $ejercicio->movimientos[$month];
+      $mes = $exercise->Movements[$month];
 
       //recogemos el dia pedido (todo el contenido)
       $dia = $mes[$day];
@@ -127,28 +127,28 @@ class Resultados {
       //preparamaos la variable del total inicializandola a cero
       $total=0;
 
-      //recorremos todos los meses del ejercicio pedido
-      foreach($ejercicio->movimientos as $mes){
+      //recorremos todos los meses del exercise pedido
+      foreach($exercise->Movements as $mes){
 
         //recorremos todos los días del mes pedido
         foreach($mes as $day){
 
           //recorremos el array del día y vamos adquiriendo el importe total
-          foreach($day as $movimiento){
+          foreach($day as $Movement){
 
             if($type==NULL){
 
-              $total = $total + $movimiento->imp;
+              $total = $total + $Movement->imp;
 
             }else{
 
               //Recogemos del código y el tipo sólo la primera letra, y la pasamos a mayúscula
-              $code = strtoupper(substr($movimiento->code,0,1));
+              $code = strtoupper(substr($Movement->code,0,1));
               $type = strtoupper(substr($type,0,1));
 
-              //Si la letra extraida coincide con el tipo de movimiento
+              //Si la letra extraida coincide con el tipo de Movement
               if($code==$type){
-                $total = $total + $movimiento->imp;
+                $total = $total + $Movement->imp;
               }
      
             }
@@ -163,14 +163,14 @@ class Resultados {
 
   }
 
-  //los indices de la segunda fecha deberan terminar con "_end". El intervalo podrá abarcar ejercicios fiscales
+  //los indices de la segunda fecha deberan terminar con "_end". El intervalo podrá abarcar exercises fiscales
   public function totalInterval($date_ini,$date_end,$type,$businessplan){
 
       //sacamos del array los indices $day, $month y $exercise
       extract($date_ini);
 
-      //recogemos el objeto del ejercicio pedido
-      $ejercicio_ini = $businessplan->getEjercicio($exercise);
+      //recogemos el objeto del exercise pedido
+      $exercise_ini = $businessplan->getexercise($exercise);
 
       //recogemos el mes pedido
       $mes_ini = $month;
@@ -181,8 +181,8 @@ class Resultados {
       //sacamos del array los indices $day, $month y $exercise
       extract($date_end);
 
-      //recogemos el objeto del ejercicio pedido
-      $ejercicio_end = $businessplan->getEjercicio($exercise);
+      //recogemos el objeto del exercise pedido
+      $exercise_end = $businessplan->getexercise($exercise);
 
       //recogemos el mes pedido
       $mes_end = $month;
@@ -193,43 +193,43 @@ class Resultados {
       //preparamaos la variable del total inicializandola a cero
       $total=0;
 
-      //recorremos los ejercicios fiscales del plan de negocio
-      foreach($businessplan->ejercicios as $ejercicio){
+      //recorremos los exercises fiscales del plan de negocio
+      foreach($businessplan->exercises as $exercise){
 
-        //Acotamos el intervalo por el año fiscal (para no tener que cargar todos los ejercicios fiscales)
-        if(($ejercicio->year >= $ejercicio_ini->year)&&($ejercicio->year <= $ejercicio_end->year)){
+        //Acotamos el intervalo por el año fiscal (para no tener que cargar todos los exercises fiscales)
+        if(($exercise->year >= $exercise_ini->year)&&($exercise->year <= $exercise_end->year)){
 
-          //recorremos los ejercicios fiscales, fijandonos en los meses
-          foreach($ejercicio->movimientos as $mes){
+          //recorremos los exercises fiscales, fijandonos en los meses
+          foreach($exercise->Movements as $mes){
 
-            if(($ejercicio->year >= $ejercicio_ini->year)||($mes <= $mes_ini)||($mes >= $mes_fin)||($ejercicio->year <= $ejercicio_fin->year)){
+            if(($exercise->year >= $exercise_ini->year)||($mes <= $mes_ini)||($mes >= $mes_fin)||($exercise->year <= $exercise_fin->year)){
 
               //recorremos todos los dias de un mes
               foreach($mes as $dia){
 
-                if(($ejercicio->year >= $ejercicio_ini->year)||($dia <= $dia_ini)||($dia >= $dia_fin)||($ejercicio->year <= $ejercicio_fin->year)){
+                if(($exercise->year >= $exercise_ini->year)||($dia <= $dia_ini)||($dia >= $dia_fin)||($exercise->year <= $exercise_fin->year)){
 
-                  //recorremos todos los movimientos de un dia
-                  foreach($dia as $movimiento){
+                  //recorremos todos los Movements de un dia
+                  foreach($dia as $Movement){
 
                     if($type==NULL){
 
-                      $total = $total + $movimiento->imp;
+                      $total = $total + $Movement->imp;
 
                     }else{
 
                       //Recogemos del código y el tipo sólo la primera letra, y la pasamos a mayúscula
-                      $code = strtoupper(substr($movimiento->code,0,1));
+                      $code = strtoupper(substr($Movement->code,0,1));
                       $type = strtoupper(substr($type,0,1));
 
-                      //Si la letra extraida coincide con el tipo de movimiento
+                      //Si la letra extraida coincide con el tipo de Movement
                       if($code==$type){
-                        $total = $total + $movimiento->imp;
+                        $total = $total + $Movement->imp;
                       }
              
                     }//fin if
 
-                    var_dump($movimiento->imp);
+                    var_dump($Movement->imp);
                     echo "<br><br>";
 
                   }//fin foreach
@@ -255,14 +255,14 @@ class Resultados {
       //sacamos del array los indices $day, $month y $exercise
       extract($date);
 
-      //convierto el indice del ejercicio fiscal de cadena a entero
+      //convierto el indice del exercise fiscal de cadena a entero
       $exercise=(int)$exercise;
 
-      //recogemos el objeto del ejercicio pedido
-      $ejercicio = $businessPlan->getEjercicio($exercise);
+      //recogemos el objeto del exercise pedido
+      $exercise = $businessPlan->getexercise($exercise);
 
       //recogemos el mes pedido (todo el contenido)
-      $mes = $ejercicio->movimientos[$month];
+      $mes = $exercise->Movements[$month];
 
       //recogemos el dia pedido (todo el contenido)
       $dia = $mes[$day];
@@ -270,30 +270,30 @@ class Resultados {
       //preparamaos la variable del total inicializandola a cero
       $total=0;
       
-      foreach($businessplan->ejercicios as $ejercicio){
+      foreach($businessplan->exercises as $exercise){
 
-        //recorremos todos los meses del ejercicio pedido
-        foreach($ejercicio->movimientos as $mes){
+        //recorremos todos los meses del exercise pedido
+        foreach($exercise->Movements as $mes){
 
           //recorremos todos los días del mes pedido
           foreach($mes as $day){
 
             //recorremos el array del día y vamos adquiriendo el importe total
-            foreach($day as $movimiento){
+            foreach($day as $Movement){
 
               if($type==NULL){
 
-                $total = $total + $movimiento->imp;
+                $total = $total + $Movement->imp;
 
               }else{
 
                 //Recogemos del código y el tipo sólo la primera letra, y la pasamos a mayúscula
-                $code = strtoupper(substr($movimiento->code,0,1));
+                $code = strtoupper(substr($Movement->code,0,1));
                 $type = strtoupper(substr($type,0,1));
 
-                //Si la letra extraida coincide con el tipo de movimiento
+                //Si la letra extraida coincide con el tipo de Movement
                 if($code==$type){
-                  $total = $total + $movimiento->imp;
+                  $total = $total + $Movement->imp;
                 }
        
               }
@@ -310,7 +310,7 @@ class Resultados {
 
   }
 
-  //en el primer parametro vendra el valor concreto y el tipo de valor (day, month, ejercicio, interval o bp)
+  //en el primer parametro vendra el valor concreto y el tipo de valor (day, month, exercise, interval o bp)
   public function intervalFinder($interval, $intervaltype, $businessplan){
 
       switch($intervalType){
@@ -418,7 +418,7 @@ class Resultados {
 
   }
 
-  //Sale de los movimientos de cuentas.
+  //Sale de los Movements de cuentas.
   public function tesoreria(){
 
   }

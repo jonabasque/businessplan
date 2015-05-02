@@ -1,9 +1,10 @@
 <?php
+
 namespace asketic\business_plan;
 
 //require("registro.php");
 
-class RecursoHumano extends Movimiento{
+class Purchase extends Movement{
 
   public function __construct($code, $concept, $imp, $units ){
 

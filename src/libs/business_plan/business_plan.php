@@ -1,12 +1,12 @@
 <?php
 
-//require_once("ejercicios_fiscales.php");
+//require_once("fiscal_year.php");
 use asketic\business_plan\User as User;
-use asketic\business_plan\EjercicioFiscal as EjercicioFiscal;
+use asketic\business_plan\FiscalYear as FiscalYear;
 
 namespace asketic\business_plan;
 
-class BusinessPlan {//extends EjercicioFiscal {
+class BusinessPlan {//extends exerciseFiscal {
 
   private $user;
   private $title;
@@ -17,15 +17,15 @@ class BusinessPlan {//extends EjercicioFiscal {
 
   private $inversion_inicial; //Incluimos dentro la financiación inicial
 
-  private $inversiones = [];
+  private $inversions = [];
 
   private $RRHH = [];
 
-  public $ejercicios = [];
+  public $exercises = [];
 
-  public $resultados; //Va a ser un objeto de la clase resultados
+  public $results; //Va a ser un objeto de la clase resultados
 
-  public function __construct(User $user, $sector, $locale, $title){
+  public function __construct($sector, $locale, $title){
 
     $this->user = $user;
     $this->title = $title;
@@ -33,19 +33,19 @@ class BusinessPlan {//extends EjercicioFiscal {
     $this->locale = $locale;
   }
 
-  public function setEjercicio($type, $year, $started){
+  public function setexercise($type, $year, $started){
 
-    $this->ejercicios[$year] = new EjercicioFiscal($type, $year, $started);
-    //var_dump($this->ejercicios[$year]);
+    $this->exercises[$year] = new FiscalYear($type, $year, $started);
+    //var_dump($this->exercises[$year]);
 
   }
 
-  public function getEjercicio($year){
+  public function getexercise($year){
 
-      //return $this->ejercicios;
+      //return $this->exercises;
 
-    foreach($this->ejercicios as $ejercicio){
-            if ($ejercicio->year == $year) return $ejercicio;
+    foreach($this->exercises as $exercise){
+            if ($exercise->year == $year) return $exercise;
       }
 
   return false;

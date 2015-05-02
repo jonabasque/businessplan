@@ -2,7 +2,7 @@
 
 namespace asketic\business_plan;
 
-class Movimiento{
+class Movement{
 
   private $id;
   public $date;
