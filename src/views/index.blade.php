@@ -5,15 +5,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Business Plan</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!--<link rel="stylesheet" type="text/css" href="{!! HTML::style('css/style.css') !!}" />-->
+		<link href="{{ asset('assets/jonabasque/businessplan/css/style.css') }}" rel="stylesheet" media="screen">
 
 	</head>
 
 	<body>
 
 			<header >
-				<img src="images/logo.png" />
-				<h2>{{bp.titulo}}</h2>
+				<img src="{{ asset('assets/jonabasque/businessplan/images/logo.png') }}" />
+				<h2>Business Plan</h2>
 
 				<bp-nav-ejercicios></bp-nav-ejercicios>
 

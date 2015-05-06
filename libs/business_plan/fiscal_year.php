@@ -1,7 +1,7 @@
 <?php
 namespace asketic\business_plan;
 
-//se llama a registro desde aquí para que compra y venta la puedan extender
+//se llama a registro desde aquí para que compra y sale la puedan extender
 require_once("purchase.php");
 require_once("sale.php");
 require_once("spending.php");
@@ -27,12 +27,12 @@ class FiscalYear {
   //guardará un objeto por dia ¿¿O POR TRANSACCION MEJOR?? empezando por el primero del inicio fiscal
   //Cada objeto tiene atributos: codigo, descripcion, fecha, concepto, importe, unidades.
   public $purchases = [];
-  public $ventas = [];
+  public $sales = [];
   public $RRHH   = [];
-  public $gastos = [];
-  public $inversiones = []; //incluye la financiación, y la inversion en inmovilizado. Se invertir en cualquier momento.
+  public $spendings = [];
+  public $inversions = []; //incluye la financiación, y la inversion en inmovilizado. Se invertir en cualquier momento.
 
-  //Prueba con Movement dentro de lo que sería dentro del ejercicio fiscal, para ver si gastos, ventas y demas se podrían
+  //Prueba con Movement dentro de lo que sería dentro del ejercicio fiscal, para ver si spendings, sales y demas se podrían
   //incluir en un único array, en vez de en varios
   public $Movements = [];
 
@@ -54,7 +54,7 @@ class FiscalYear {
 
   private function prepareArrays(){
 
-    //crear los indices de los arrays purchases y ventas con el array months,
+    //crear los indices de los arrays purchases y sales con el array months,
     //para saber los dias de febrero y a futuro días festivos, etc...
     $count = 0;
     $init = null;
@@ -62,29 +62,29 @@ class FiscalYear {
 
       //necesito que empiece cuando sea igual al periodo y continue hasta el final.
       if($key == $this->started){
-      	$this->Movements[$key] = []; //Se prentende incluir aqui todos los Movements (gastos, ventas, ...)
+      	$this->Movements[$key] = []; //Se prentende incluir aqui todos los Movements (spendings, sales, ...)
         $this->purchases[$key] = [];
-        $this->ventas[$key] = [];
+        $this->sales[$key] = [];
         $this->RRHH[$key] = [];
-        $this->gastos[$key] = [];// se le podría decir que sea de 31 posiciones?
+        $this->spendings[$key] = [];// se le podría decir que sea de 31 posiciones?
         $init = $count;
       }elseif($init != null){
-      	$this->Movements[$key] = []; //Se prentende incluir aqui todos los Movements (gastos, ventas, ...)
+      	$this->Movements[$key] = []; //Se prentende incluir aqui todos los Movements (spendings, sales, ...)
         $this->purchases[$key] = [];
-        $this->ventas[$key] = [];
+        $this->sales[$key] = [];
         $this->RRHH[$key] = [];
-        $this->gastos[$key] = [];
+        $this->spendings[$key] = [];
       }
       $count++;
     }
 
     foreach($this->months as $key => $value){
       if($key != $init){
-      	$this->Movements[$key] = []; //Se prentende incluir aqui todos los Movements (gastos, ventas, ...)
+      	$this->Movements[$key] = []; //Se prentende incluir aqui todos los Movements (spendings, sales, ...)
         $this->purchases[$key] = [];
-        $this->ventas[$key] = [];
+        $this->sales[$key] = [];
         $this->RRHH[$key] = [];
-        $this->gastos[$key] = [];
+        $this->spendings[$key] = [];
       }
     }
 
@@ -92,10 +92,10 @@ class FiscalYear {
     foreach($this->months as $month => $days){
 
       for($i = 1; $i <= $days; $i++){
-      	$this->Movements[$month][$i] = []; //Se prentende incluir aqui todos los Movements (gastos, ventas, ...)
+      	$this->Movements[$month][$i] = []; //Se prentende incluir aqui todos los Movements (spendings, sales, ...)
         $this->purchases[$month][$i] = [];
-        $this->ventas[$month][$i] = [];
-        $this->gastos[$month][$i] = [];
+        $this->sales[$month][$i] = [];
+        $this->spendings[$month][$i] = [];
         $this->RRHH[$month][$i] = [];
 
       }
@@ -112,7 +112,7 @@ class FiscalYear {
 
     extract($var_array);
 
-    echo "$concept, $importe, $units, $wddx_tamaño\n";
+    echo "$concept, $importe, $units\n";
 
   	$opcion=substr($code,0,1);
 
@@ -121,7 +121,7 @@ class FiscalYear {
   		case "C"://purchases
   			$Movement = new Purchase($code, $concept, $importe, $units);
   			break;
-		  case "V"://ventas
+		  case "V"://sales
   			$Movement = new Sale($code, $concept, $importe, $units);
   			break;
   		case "G"://gasto
@@ -144,7 +144,7 @@ class FiscalYear {
   //Antes getCompra
   public function getMovement($code){
 
-  	//De nuevo, utilizamos el array de Movements para intentar traer el elegido (compra, venta, gastos, ...)
+  	//De nuevo, utilizamos el array de Movements para intentar traer el elegido (compra, sale, spendings, ...)
   	foreach($this->Movements as $month => $month){
 			    foreach($month as $day => $dia){
 			        foreach($dia as $registro ){

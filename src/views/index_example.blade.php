@@ -6,12 +6,13 @@ namespace Jonabasque\Businessplan;
 echo "Planes de negocio<br \>";
 
 //llamamos a business_plan y exercises_fiscales, y aparte a calculadora, para algunas operaciones
-require_once("libs/business_plan/movement.php");
+
+/*require_once("libs/business_plan/movement.php");
 require_once("libs/business_plan/inversion.php");
 require_once("libs/business_plan/human_resource.php");
 require_once("libs/business_plan/results.php");
 require_once("libs/business_plan/business_plan.php");
-require_once("libs/business_plan/fiscal_year.php");
+require_once("libs/business_plan/fiscal_year.php");*/
 
 //Utilizamos alias para cada clase
 use asketic\business_plan\Inversion as Inversion;
@@ -91,7 +92,6 @@ $inversion1 = new Inversion($code, $concept, $importe, $units);
 
 //Recurso humano de prueba para meter desde la clase businessPlan
 
-//echo $businessPlan->user->nombre;
 echo "<br /><br />";
 echo $businessPlan->getSector();
 echo "<br />";

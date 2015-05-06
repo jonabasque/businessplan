@@ -1,7 +1,6 @@
 <?php
 
 //require_once("fiscal_year.php");
-use asketic\business_plan\User as User;
 use asketic\business_plan\FiscalYear as FiscalYear;
 
 namespace asketic\business_plan;
@@ -27,7 +26,6 @@ class BusinessPlan {//extends exerciseFiscal {
 
   public function __construct($sector, $locale, $title){
 
-    $this->user = $user;
     $this->title = $title;
     $this->sector = $sector;
     $this->locale = $locale;

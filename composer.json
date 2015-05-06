@@ -13,9 +13,11 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/migrations",
+            "src/controllers",
+            "src/views"
         ],
-        "psr-0": {
+        "psr-4": {
             "Jonabasque\\Businessplan\\": "src/"
         }
     },
